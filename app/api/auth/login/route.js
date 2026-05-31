@@ -67,7 +67,7 @@ export async function POST(request) {
 
             const otpEmailStatus = await sendMail("Your login verification code.", email, OTPEmailTemplate)
             if (!otpEmailStatus.success) {
-                return response(false, 500, 'Something went wrong.')
+                return response(false, 500, `Failed to send OTP email: ${otpEmailStatus.message}`)
             }
 
         }

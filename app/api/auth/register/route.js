@@ -46,7 +46,11 @@ export async function POST(request) {
             .sign(secret)
 
 
-        await sendMail('Email Verification request from Kunal Babber', email, emailVerificationLink(`${process.env.NEXT_PUBLIC_BASE_URL}/auth/verify-email/${token}`))
+        const emailResult = await sendMail('Email Verification request from Kunal Babber', email, emailVerificationLink(`${process.env.NEXT_PUBLIC_BASE_URL}/auth/verify-email/${token}`))
+
+        if (!emailResult.success) {
+            return response(false, 500, `Registration succeeded, but failed to send verification email: ${emailResult.message}`)
+        }
 
         return response(true, 200, 'Registration success, Please verify your email address.')
 
