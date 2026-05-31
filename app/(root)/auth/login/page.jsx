@@ -1,6 +1,6 @@
 'use client'
 import { Card, CardContent } from '@/components/ui/card'
-import { GoogleLogin } from '@react-oauth/google'
+import { useGoogleLogin } from '@react-oauth/google'
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -19,6 +19,8 @@ import ButtonLoading from '@/components/Application/ButtonLoading'
 import { z } from 'zod'
 import { FaRegEyeSlash } from "react-icons/fa";
 import { FaRegEye } from "react-icons/fa6";
+import { FcGoogle } from "react-icons/fc";
+import { Button } from '@/components/ui/button';
 import Link from 'next/link'
 import { USER_DASHBOARD, WEBSITE_REGISTER, WEBSITE_RESETPASSWORD } from '@/routes/WebsiteRoute'
 import axios from 'axios'
@@ -68,12 +70,17 @@ const LoginPage = () => {
         }
     }
 
-    const handleGoogleSuccess = async (credentialResponse) => {
+    const handleGoogleSuccess = async (responseObj) => {
         try {
             setLoading(true)
-            const { data: response } = await axios.post('/api/auth/google', {
-                credential: credentialResponse.credential
-            })
+            const payload = {}
+            if (responseObj.credential) {
+                payload.credential = responseObj.credential
+            } else if (responseObj.access_token) {
+                payload.access_token = responseObj.access_token
+            }
+            
+            const { data: response } = await axios.post('/api/auth/google', payload)
             if (!response.success) {
                 throw new Error(response.message)
             }
@@ -92,6 +99,13 @@ const LoginPage = () => {
             setLoading(false)
         }
     }
+
+    const loginWithGoogle = useGoogleLogin({
+        onSuccess: handleGoogleSuccess,
+        onError: () => {
+            showToast('error', 'Google authentication failed.')
+        }
+    });
 
 
     // otp verification  
@@ -185,15 +199,16 @@ const LoginPage = () => {
                                             <span className='bg-white dark:bg-zinc-950 px-2 text-zinc-500 font-semibold tracking-wider'>Or</span>
                                         </div>
                                     </div>
-                                    <div className='mb-6 flex justify-center'>
-                                        <GoogleLogin
-                                            onSuccess={handleGoogleSuccess}
-                                            onError={() => {
-                                                showToast('error', 'Google authentication failed.')
-                                            }}
-                                            theme="outline"
-                                            text="continue_with"
-                                        />
+                                    <div className='mb-6'>
+                                        <Button 
+                                            type="button" 
+                                            variant="outline" 
+                                            className="w-full flex items-center gap-2" 
+                                            onClick={() => loginWithGoogle()}
+                                        >
+                                            <FcGoogle className="text-xl" />
+                                            <span>Continue with Google</span>
+                                        </Button>
                                     </div>
                                     <div className='text-center'>
                                         <div className='flex justify-center items-center gap-1'>

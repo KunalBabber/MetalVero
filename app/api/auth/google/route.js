@@ -10,27 +10,45 @@ const client = new OAuth2Client(process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID);
 export async function POST(request) {
     try {
         await connectDB();
-        const { credential } = await request.json();
+        const { credential, access_token } = await request.json();
 
-        if (!credential) {
-            return NextResponse.json({ success: false, message: "Missing Google credential." }, { status: 400 });
+        if (!credential && !access_token) {
+            return NextResponse.json({ success: false, message: "Missing Google credential or access token." }, { status: 400 });
         }
 
-        // Verify the Google ID token
-        const ticket = await client.verifyIdToken({
-            idToken: credential,
-            audience: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
-        });
+        let email, name, picture;
 
-        const payload = ticket.getPayload();
-        
-        if (!payload || !payload.email) {
-            return NextResponse.json({ success: false, message: "Invalid Google token payload." }, { status: 400 });
+        if (credential) {
+            // Verify the Google ID token
+            const ticket = await client.verifyIdToken({
+                idToken: credential,
+                audience: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+            });
+
+            const payload = ticket.getPayload();
+            
+            if (!payload || !payload.email) {
+                return NextResponse.json({ success: false, message: "Invalid Google token payload." }, { status: 400 });
+            }
+
+            email = payload.email;
+            name = payload.name;
+            picture = payload.picture;
+        } else if (access_token) {
+            // Verify access_token
+            const googleResponse = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+                headers: { Authorization: `Bearer ${access_token}` }
+            });
+
+            if (!googleResponse.ok) {
+                return NextResponse.json({ success: false, message: "Invalid Google access token." }, { status: 400 });
+            }
+
+            const payload = await googleResponse.json();
+            email = payload.email;
+            name = payload.name;
+            picture = payload.picture;
         }
-
-        const email = payload.email;
-        const name = payload.name;
-        const picture = payload.picture;
 
         // Check if user exists
         let user = await UserModel.findOne({ email, deletedAt: null });
