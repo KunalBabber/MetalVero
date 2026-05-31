@@ -20,8 +20,8 @@ const UserDropdown = () => {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white cursor-pointer shadow-md hover:scale-105 transition-transform">
-                    <LuUserCog size={20} />
+                <div className="w-8 h-8 sm:w-10 sm:h-10 shrink-0 rounded-full bg-primary flex items-center justify-center text-white cursor-pointer shadow-md hover:scale-105 transition-transform">
+                    <LuUserCog className="size-4 sm:size-5" />
                 </div>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="me-5 w-44">

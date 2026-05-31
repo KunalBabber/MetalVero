@@ -17,9 +17,9 @@ const ThemeSwitch = () => {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button type="button" variant="ghost" className="cursor-pointer">
-                    <IoSunnyOutline className="dark:hidden" />
-                    <IoMoonOutline className="hidden dark:block" />
+                <Button type="button" variant="ghost" size="icon" className="cursor-pointer h-8 w-8 sm:h-9 sm:w-9 shrink-0">
+                    <IoSunnyOutline className="dark:hidden !size-4 sm:!size-5" />
+                    <IoMoonOutline className="hidden dark:block !size-4 sm:!size-5" />
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
