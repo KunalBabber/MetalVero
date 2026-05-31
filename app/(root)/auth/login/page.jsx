@@ -1,7 +1,7 @@
 'use client'
 import { Card, CardContent } from '@/components/ui/card'
 import { useGoogleLogin } from '@react-oauth/google'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { zodResolver } from "@hookform/resolvers/zod"
 import { zSchema } from '@/lib/zodSchema'
@@ -104,8 +104,25 @@ const LoginPage = () => {
         onSuccess: handleGoogleSuccess,
         onError: () => {
             showToast('error', 'Google authentication failed.')
-        }
+        },
+        ux_mode: 'redirect'
     });
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const hash = window.location.hash;
+            if (hash.includes('access_token=')) {
+                const params = new URLSearchParams(hash.substring(1));
+                const accessToken = params.get('access_token');
+                if (accessToken) {
+                    window.history.replaceState(null, '', window.location.pathname + window.location.search);
+                    handleGoogleSuccess({ access_token: accessToken });
+                }
+            } else if (hash.includes('error=')) {
+                showToast('error', 'Google authentication failed.');
+            }
+        }
+    }, []);
 
 
     // otp verification  
