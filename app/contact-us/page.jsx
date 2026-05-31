@@ -74,7 +74,7 @@ const ContactUs = () => {
                                     <MdOutlinePhone className="text-primary text-2xl flex-shrink-0" />
                                     <div>
                                         <p className="font-bold text-sm uppercase text-gray-500">Sales & Inquiry</p>
-                                        <p className="text-lg font-semibold">+91 825233812</p>
+                                        <p className="text-lg font-semibold">+91 8252338182</p>
                                     </div>
                                 </div>
                                 <div className="flex gap-4 items-center">

@@ -100,7 +100,7 @@ const Footer = () => {
                         </li>
                         <li className='mb-2 text-gray-500 flex gap-2'>
                             <MdOutlinePhone size={20} />
-                            <Link href="tel:+91-825233812" className='hover:text-primary text-sm'>+91-825233812</Link>
+                            <Link href="tel:+91-8252338182" className='hover:text-primary text-sm'>+91-8252338182</Link>
                         </li>
                         <li className='mb-2 text-gray-500 flex gap-2'>
                             <MdOutlineMail size={20} />
