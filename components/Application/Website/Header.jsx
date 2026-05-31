@@ -95,7 +95,7 @@ const Header = () => {
                 </nav>
 
 
-                <div className='flex items-center gap-1.5 sm:gap-4 md:gap-6 lg:gap-8'>
+                <div className='flex items-center gap-4 md:gap-6 lg:gap-8'>
                     <button type='button' onClick={() => setShowSearch(!showSearch)}>
                         <IoIosSearch
                             className='text-gray-500 hover:text-primary cursor-pointer'
