@@ -158,7 +158,7 @@ const ProductDetails = ({ product, variant, reviewCount }) => {
 
                 {/* DETAILS SECTION */}
                 <div className="md:w-1/2 lg:w-[45%] md:mt-0 mt-8">
-                    <h1 className="text-4xl font-black uppercase mb-4 leading-tight">{product.name}</h1>
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase mb-4 leading-tight">{product.name}</h1>
 
                     <div className="flex items-center gap-4 mb-6 pb-6 border-b border-gray-100 dark:border-zinc-800">
                         <div className="flex text-yellow-500">
@@ -170,7 +170,7 @@ const ProductDetails = ({ product, variant, reviewCount }) => {
                     </div>
 
                     <div className="mb-8">
-                        <div className="flex items-end gap-3 mb-2">
+                        <div className="flex items-end flex-wrap gap-3 mb-2">
                             <span className="text-3xl font-bold text-primary">
                                 {variant.sellingPrice.toLocaleString('en-IN', { style: 'currency', currency: 'INR' })}
                             </span>
@@ -193,8 +193,8 @@ const ProductDetails = ({ product, variant, reviewCount }) => {
 
                     {/* ACTION BUTTONS */}
                     <div className="flex flex-col gap-4 mb-8">
-                        <div className="flex gap-4">
-                            <div className="flex items-center h-14 border border-gray-300 dark:border-zinc-700 w-32 bg-white dark:bg-zinc-900">
+                        <div className="flex flex-col sm:flex-row gap-4">
+                            <div className="flex items-center h-14 border border-gray-300 dark:border-zinc-700 w-full sm:w-32 bg-white dark:bg-zinc-900">
                                 <button type="button" className="h-full w-10 flex justify-center items-center hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors" onClick={() => handleQty('desc')}>
                                     <HiMinus />
                                 </button>
@@ -204,7 +204,7 @@ const ProductDetails = ({ product, variant, reviewCount }) => {
                                 </button>
                             </div>
 
-                            <div className="flex-1 flex gap-4">
+                            <div className="flex-1 flex flex-col sm:flex-row gap-4">
                                 {!isVariantAvailable ? (
                                     <Button className="w-full h-14 rounded-none uppercase tracking-widest font-bold" disabled type="button">Out of Stock</Button>
                                 ) : (!isAddedIntoCart ? (
@@ -247,7 +247,7 @@ const ProductDetails = ({ product, variant, reviewCount }) => {
                 <ProductReveiw productId={product._id} />
 
                 <div className="border-t pt-10">
-                    <h2 className="text-3xl font-black uppercase mb-8 text-center">You May Also Like</h2>
+                    <h2 className="text-2xl md:text-3xl font-black uppercase mb-8 text-center">You May Also Like</h2>
                     <RelatedProducts productId={product._id} />
                 </div>
             </div>
