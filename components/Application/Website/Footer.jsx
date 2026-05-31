@@ -96,11 +96,11 @@ const Footer = () => {
                     <ul>
                         <li className='mb-2 text-gray-500 flex gap-2'>
                             <IoLocationOutline size={20} />
-                            <span className='text-sm'>MetalVero market Lucknow, India 256320</span>
+                            <span className='text-sm'>C-51, 2nd Phase, Near Union Dharamkata, Adityapur Industrial Area, Jamshedpur, Jharkhand 832109</span>
                         </li>
                         <li className='mb-2 text-gray-500 flex gap-2'>
                             <MdOutlinePhone size={20} />
-                            <Link href="tel:+91-8569874589" className='hover:text-primary text-sm'>+91-8569874589</Link>
+                            <Link href="tel:+91-825233812" className='hover:text-primary text-sm'>+91-825233812</Link>
                         </li>
                         <li className='mb-2 text-gray-500 flex gap-2'>
                             <MdOutlineMail size={20} />

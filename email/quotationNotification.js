@@ -38,7 +38,7 @@ export const quotationNotification = (data) => {
                     <a href="${process.env.NEXT_PUBLIC_BASE_URL}/shop" class="btn">VISIT OUR STORE</a>
                 </div>
 
-                <p style="margin-top: 30px;">If you would like to proceed with this quote, please reply to this email or contact us directly on WhatsApp at +91 8252338182.</p>
+                <p style="margin-top: 30px;">If you would like to proceed with this quote, please reply to this email or contact us directly on WhatsApp at +91 825233812.</p>
 
                 <div class="footer">
                     <p>&copy; ${new Date().getFullYear()} MetalVero Industrial Furniture. All rights reserved.</p>

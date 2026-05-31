@@ -59,10 +59,10 @@ const ContactUs = () => {
                             <div className="flex gap-4 items-start">
                                 <IoLocationOutline className="text-primary text-2xl flex-shrink-0 mt-1" />
                                 <p className="text-gray-600 dark:text-gray-300">
-                                    MetalVero Industrial Park,<br />
-                                    Plot No. 45-48, Sector 12,<br />
-                                    Lucknow, Uttar Pradesh, 256320<br />
-                                    India
+                                    C-51, 2nd Phase,<br />
+                                    Near Union Dharamkata,<br />
+                                    Adityapur Industrial Area,<br />
+                                    Jamshedpur, Jharkhand 832109
                                 </p>
                             </div>
                         </div>
@@ -74,7 +74,7 @@ const ContactUs = () => {
                                     <MdOutlinePhone className="text-primary text-2xl flex-shrink-0" />
                                     <div>
                                         <p className="font-bold text-sm uppercase text-gray-500">Sales & Inquiry</p>
-                                        <p className="text-lg font-semibold">+91 85698 74589</p>
+                                        <p className="text-lg font-semibold">+91 825233812</p>
                                     </div>
                                 </div>
                                 <div className="flex gap-4 items-center">
@@ -170,7 +170,7 @@ const ContactUs = () => {
                 {/* Map Section */}
                 <div className="mt-20 h-[450px] w-full bg-gray-200 rounded-lg overflow-hidden border border-gray-100 dark:border-zinc-800">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113911.39958169971!2d80.86543884391785!3d26.84869408477017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd0a55555555%3A0xce8f6c91a0c0e7b8!2sLucknow%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1714567890"
+                        src="https://maps.google.com/maps?q=C-51,%202nd%20Phase,%20Near%20Union%20Dharamkata,%20Adityapur%20Industrial%20Area,%20Jamshedpur,%20Jharkhand%20832109&t=&z=13&ie=UTF8&iwloc=&output=embed"
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}

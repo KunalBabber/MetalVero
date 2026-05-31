@@ -20,7 +20,7 @@ export async function POST(request) {
                 <p>${message.replace(/\n/g, '<br>')}</p>
                 <hr style="border: 0; border-top: 1px solid #e5e7eb; margin: 20px 0;">
                 <p style="font-size: 12px; color: #6b7280;">This is a response to your enquiry on our website.</p>
-                <p style="font-size: 12px; color: #6b7280;">MetalVero Industrial Park, Lucknow, India</p>
+                <p style="font-size: 12px; color: #6b7280;">C-51, 2nd Phase, Near Union Dharamkata, Adityapur Industrial Area, Jamshedpur, Jharkhand 832109</p>
             </div>
         `;
 

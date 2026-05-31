@@ -185,7 +185,7 @@ const Home = async () => {
                             <Link href="/custom-order" className="inline-flex justify-center items-center bg-primary text-white hover:bg-white hover:text-black text-sm sm:text-base font-bold py-3 sm:py-4 px-6 sm:px-10 uppercase tracking-widest transition-all duration-300 transform hover:scale-105">
                                 Get a Quote
                             </Link>
-                            <Link href="https://wa.me/9876543210" className="inline-flex justify-center items-center border-2 border-zinc-700 text-white hover:border-white hover:bg-white hover:text-black text-sm sm:text-base font-bold py-3 sm:py-4 px-6 sm:px-10 uppercase tracking-widest transition-all duration-300">
+                            <Link href="https://wa.me/825233812" className="inline-flex justify-center items-center border-2 border-zinc-700 text-white hover:border-white hover:bg-white hover:text-black text-sm sm:text-base font-bold py-3 sm:py-4 px-6 sm:px-10 uppercase tracking-widest transition-all duration-300">
                                 Chat on WhatsApp
                             </Link>
                         </div>

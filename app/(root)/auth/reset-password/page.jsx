@@ -74,7 +74,7 @@ const ResetPassword = () => {
     }
 
     return (
-        <Card className="w-[400px]">
+        <Card className="w-full max-w-[400px]">
             <CardContent>
                 <div className='flex justify-center py-4'>
                     <span className="text-2xl font-black uppercase tracking-widest text-primary">MetalVero</span>
