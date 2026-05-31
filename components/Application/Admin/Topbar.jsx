@@ -28,8 +28,8 @@ const Topbar = () => {
                 <AdminMobileSearch />
                 <ThemeSwitch />
                 <UserDropdown />
-                <Button onClick={toggleSidebar} type="button" size="icon" className="ms-2 md:hidden">
-                    <RiMenu4Fill />
+                <Button onClick={toggleSidebar} type="button" variant="outline" size="icon" className="md:hidden flex shrink-0">
+                    <RiMenu4Fill className="!size-5" />
                 </Button>
             </div>
 
