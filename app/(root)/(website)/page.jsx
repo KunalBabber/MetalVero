@@ -27,9 +27,9 @@ const Home = async () => {
     // }
 
     const categories = [
-        { name: 'Iron Furniture', image: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=800&auto=format&fit=crop', link: '/shop?category=iron' },
-        { name: 'Steel Furniture', image: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=800&auto=format&fit=crop', link: '/shop?category=steel' },
-        { name: 'Wood & Metal', image: 'https://images.unsplash.com/photo-1605774337664-7a846e9cdf17?q=80&w=800&auto=format&fit=crop', link: '/shop?category=custom' },
+        { name: 'Iron Furniture', image: '/assets/images/cat_iron_furniture.png', link: '/shop?category=iron' },
+        { name: 'Steel Furniture', image: '/assets/images/cat_steel_furniture.png', link: '/shop?category=steel' },
+        { name: 'Wood & Metal', image: '/assets/images/cat_wood_metal.png', link: '/shop?category=custom' },
     ];
 
     // Placeholder images for categories if real ones aren't available - using colors/text for now to avoid broken images if possible,
