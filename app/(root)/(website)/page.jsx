@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import IndustrialProductCard from '@/components/Application/Website/IndustrialProductCard';
 import { FaArrowRight } from "react-icons/fa";
+import factoryShowcase from '@/public/assets/images/factory-showcase.jpg';
 
 const Home = async () => {
 
@@ -113,7 +114,7 @@ const Home = async () => {
             <section className="py-10 px-4 md:px-12 max-w-7xl mx-auto w-full">
                 <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden rounded-sm border-2 border-zinc-200 dark:border-zinc-800 group">
                     <Image 
-                        src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop"
+                        src={factoryShowcase}
                         alt="Factory Manufacturing Process"
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-700"

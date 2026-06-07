@@ -3,6 +3,11 @@ import Link from 'next/link'
 import { FaHotel, FaBuilding, FaHandshake, FaTruck, FaUtensils } from 'react-icons/fa'
 import Image from 'next/image'
 import factoryShowcase from '@/public/assets/images/factory-showcase.jpg'
+import imgHotels from '@/public/assets/images/b2b_hotels.png'
+import imgRestaurants from '@/public/assets/images/b2b_restaurants.png'
+import imgOffices from '@/public/assets/images/b2b_offices.png'
+import imgMeeting from '@/public/assets/images/b2b_meeting.png'
+import imgCorporateOffice from '@/public/assets/images/b2b_corporate_office.png'
 
 const B2BSolutions = () => {
     return (
@@ -41,9 +46,9 @@ const B2BSolutions = () => {
 
                     <div className="grid md:grid-cols-3 gap-8">
                         {[
-                            { icon: FaHotel, title: "Hotels & Hospitality", desc: "Durable bed frames, luggage racks, and lobby seating designed for heavy traffic.", img: factoryShowcase },
-                            { icon: FaUtensils, title: "Restaurants & Cafes", desc: "Industrial dining tables, bar stools, and outdoor furniture that sets that vibe.", img: factoryShowcase },
-                            { icon: FaBuilding, title: "Offices & Coworking", desc: "Modern workstations, conference tables, and shelving units for productive spaces.", img: factoryShowcase }
+                            { icon: FaHotel, title: "Hotels & Hospitality", desc: "Durable bed frames, luggage racks, and lobby seating designed for heavy traffic.", img: imgHotels },
+                            { icon: FaUtensils, title: "Restaurants & Cafes", desc: "Industrial dining tables, bar stools, and outdoor furniture that sets that vibe.", img: imgRestaurants },
+                            { icon: FaBuilding, title: "Offices & Coworking", desc: "Modern workstations, conference tables, and shelving units for productive spaces.", img: imgOffices }
                         ].map((item, idx) => (
                             <div key={idx} className="group border border-gray-100 dark:border-zinc-800 rounded-lg overflow-hidden hover:shadow-xl transition-all">
                                 <div className="relative h-60 w-full">
@@ -93,8 +98,8 @@ const B2BSolutions = () => {
                         </div>
                     </div>
                     <div className="grid grid-cols-2 gap-4">
-                        <Image src={factoryShowcase} width={400} height={300} alt="Meeting" className="rounded-lg object-cover h-full" />
-                        <Image src={factoryShowcase} width={400} height={300} alt="Office" className="rounded-lg object-cover h-full mt-8" />
+                        <Image src={imgMeeting} width={400} height={300} alt="Meeting" className="rounded-lg object-cover h-full" />
+                        <Image src={imgCorporateOffice} width={400} height={300} alt="Office" className="rounded-lg object-cover h-full mt-8" />
                     </div>
                 </div>
             </section>

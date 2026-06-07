@@ -1,6 +1,10 @@
 import React from 'react'
 import Image from 'next/image'
-import factoryShowcase from '@/public/assets/images/factory-showcase.jpg'
+import imgInspection from '@/public/assets/images/mfg_material_inspection.png'
+import imgCutting from '@/public/assets/images/mfg_precision_cutting.png'
+import imgWelding from '@/public/assets/images/mfg_welding.png'
+import imgSurface from '@/public/assets/images/mfg_surface_treatment.png'
+import imgQuality from '@/public/assets/images/mfg_quality_control.png'
 
 const ManufacturingProcess = () => {
     const steps = [
@@ -8,31 +12,31 @@ const ManufacturingProcess = () => {
             num: "01",
             title: "Raw Material Inspection",
             desc: "Every order begins with sourcing high-grade Iron and Steel. We perform rigorous quality checks for tensile strength and durability before processing.",
-            img: factoryShowcase
+            img: imgInspection
         },
         {
             num: "02",
             title: "Precision Cutting & Shaping",
             desc: "Using advanced CNC laser cutters and hydraulic shears, materials are cut to exact specifications with micron-level tolerance.",
-            img: factoryShowcase
+            img: imgCutting
         },
         {
             num: "03",
             title: "Welding & Fabrication",
             desc: "Our certified welders use MIG and TIG techniques to join components, ensuring structural integrity and clean, strong joints.",
-            img: factoryShowcase
+            img: imgWelding
         },
         {
             num: "04",
             title: "Surface Treatment",
             desc: "Products undergo sandblasting to remove impurities, followed by anti-rust treatment and premium powder coating for a long-lasting finish.",
-            img: factoryShowcase
+            img: imgSurface
         },
         {
             num: "05",
             title: "Quality Control & Grid",
             desc: "The final product is inspected for dimensions, finish quality, and stability. Only 100% defect-free items are packed for dispatch.",
-            img: factoryShowcase
+            img: imgQuality
         }
     ]
 

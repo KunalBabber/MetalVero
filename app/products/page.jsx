@@ -8,19 +8,19 @@ const Products = () => {
         {
             name: 'Iron Furniture',
             desc: "Heavy-duty iron tables, chairs, and shelves built for industrial and vintage aesthetics.",
-            image: '/assets/images/cat-iron.jpg',
+            image: '/assets/images/cat_iron_furniture.png',
             link: '/shop?category=iron'
         },
         {
             name: 'Steel Furniture',
             desc: "Sleek stainless steel designs perfect for modern homes, offices, and medical facilities.",
-            image: '/assets/images/cat-steel.jpg',
+            image: '/assets/images/cat_steel_furniture.png',
             link: '/shop?category=steel'
         },
         {
             name: 'Custom Metal',
             desc: "Bespoke fabrication services for gates, railings, and unique architectural elements.",
-            image: '/assets/images/cat-custom.jpg',
+            image: '/assets/images/cat_custom_metal.png',
             link: '/custom-orders'
         },
     ];
@@ -40,10 +40,12 @@ const Products = () => {
                     {categories.map((cat, idx) => (
                         <div key={idx} className="group border border-gray-100 dark:border-zinc-800 rounded-lg overflow-hidden hover:shadow-xl transition-all">
                             <div className="relative h-64 bg-gray-200">
-                                {/* Placeholder for visuals */}
-                                <div className="absolute inset-0 bg-zinc-800 flex items-center justify-center">
-                                    <span className="text-6xl font-black text-zinc-700 uppercase">{cat.name[0]}</span>
-                                </div>
+                                <Image
+                                    src={cat.image}
+                                    alt={cat.name}
+                                    fill
+                                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                />
                             </div>
                             <div className="p-8">
                                 <h3 className="text-2xl font-bold uppercase mb-3">{cat.name}</h3>

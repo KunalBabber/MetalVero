@@ -13,7 +13,7 @@ const AboutFactory = () => {
                 <div
                     className="absolute inset-0 z-0 opacity-50"
                     style={{
-                        backgroundImage: 'url("https://images.unsplash.com/photo-1565610222536-ef125c5975e3?q=80&w=2070&auto=format&fit=crop")',
+                        backgroundImage: `url(${factoryShowcase.src})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                     }}
